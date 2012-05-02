@@ -8,6 +8,7 @@ module Dali
       output = File.new("#{content['title']}.html", 'w')
       output << output_text
       output.close
+      puts "Success! #{content['title']}.html has been created"
     end
   end
 end
