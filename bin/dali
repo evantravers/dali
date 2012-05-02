@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'dali/version'
+require 'dali/cli'
+
+Dali::CLI.new.run(ARGV)
