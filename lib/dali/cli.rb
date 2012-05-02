@@ -7,7 +7,6 @@ module Dali
     # should take a layout, and an input file as an argument.
     # should spit out an index.html and an images.zip at run location
     def initialize
-      @engine = Dali::Engine
     end
 
     def run(args = ARGV)
@@ -41,11 +40,11 @@ module Dali
         puts "can't load template file"
         exit
       end
-      # render information
-      out = @engine.render(template, content)
+      # process information
+      @engine = Engine::view(template, content)
       # make file
       out_file = File.new("#{content['title']}.html", 'w')
-      out_file << out
+      out_file << @engine.render
       out_file.close
       puts "Success! #{content['title']}.html has been created"
     end
