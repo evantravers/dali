@@ -6,6 +6,9 @@ module Dali
   class CLI
     # should take a layout, and an input file as an argument.
     # should spit out an index.html and an images.zip at run location
+    def initialize
+      @engine = Dali::Engine
+    end
 
     def run(args = ARGV)
       # catch argument errors
@@ -38,6 +41,7 @@ module Dali
         puts "can't load template file"
         exit
       end
+      @engine.render(template, content)
     end
   end
 end
