@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["evantravers@gmail.com"]
   gem.description   = %q{A gem for generating emails/small websites from mustache templates}
   gem.summary       = %q{Gem designed to streamline the creation of custom emails for deploying to mailchimp, campaign monitor and similar sites}
-  gem.homepage      = ""
+  gem.homepage      = "http://twitter.com/evantravers"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
