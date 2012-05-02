@@ -1,24 +1,13 @@
 # Dali
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'dali'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install dali
+A simple gem for generating html pages for emails or webpages, taking a content.yml and a mustache template as arguments
 
 ## Usage
 
-TODO: Write usage instructions here
+Gem install dali
+dali example.yml mustache_template.html
+
+this will return an html file based on the title field of your example.xml
 
 ## Contributing
 
@@ -27,3 +16,8 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+TODO:
+
+- meta magic with sluggifying links and such
+- automatically looking for an images folder, and zipping up it's contents to go with the new html file
