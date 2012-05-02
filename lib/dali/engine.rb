@@ -4,11 +4,7 @@ module Dali
   module Engine
     extend self
     def render(template, content)
-      output_text = Mustache.render(template, content)
-      output = File.new("#{content['title']}.html", 'w')
-      output << output_text
-      output.close
-      puts "Success! #{content['title']}.html has been created"
+      return output_text = Mustache.render(template, content)
     end
   end
 end

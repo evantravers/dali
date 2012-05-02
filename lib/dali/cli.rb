@@ -41,7 +41,13 @@ module Dali
         puts "can't load template file"
         exit
       end
-      @engine.render(template, content)
+      # render information
+      out = @engine.render(template, content)
+      # make file
+      out_file = File.new("#{content['title']}.html", 'w')
+      out_file << out
+      out_file.close
+      puts "Success! #{content['title']}.html has been created"
     end
   end
 end
