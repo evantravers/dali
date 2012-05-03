@@ -41,7 +41,8 @@ module Dali
         exit
       end
       # process information
-      @engine = Engine::view(template, content)
+      @engine = Engine.new(template)
+      @engine.process(content)
       # make file
       out_file = File.new("#{content['title']}.html", 'w')
       out_file << @engine.render
