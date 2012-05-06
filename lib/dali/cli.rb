@@ -28,13 +28,6 @@ module Dali
         exit
       end
 
-      # process content
-      # content.each do | field |
-      #   if field.match /.*slug$/
-      #     field = content[field.sub('slug','')].downcase.gsub(/[^a-z1-9]+/, '').chomp('_')
-      #   end
-      # end
-
       template = File.open(args[1], 'r').read rescue nil || ""
       if template.empty?
         puts "can't load template file"
