@@ -1,4 +1,5 @@
 require 'mustache'
+require 'markdown'
 
 module Dali
   extend self
@@ -14,6 +15,9 @@ module Dali
         self.class.class_eval do
           define_method method_name do
             # magic
+            if method_name.match(/_markdown$/)
+              return Markdown.new(value).to_html
+            end
             value
           end
         end
