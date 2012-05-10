@@ -1,10 +1,11 @@
 require 'mustache'
-require 'markdown'
+require 'redcarpet'
 
 module Dali
   extend self
   class Engine < Mustache
     def initialize temp
+      @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
       @template = temp
     end
 
@@ -16,9 +17,10 @@ module Dali
           define_method method_name do
             # magic
             if method_name.match(/_markdown$/)
-              return Markdown.new(value).to_html
+              @markdown.render(value)
+            else
+              value
             end
-            value
           end
         end
       end
